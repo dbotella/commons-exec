@@ -1,0 +1,66 @@
+analyze:
+  location: local
+  checkers:
+    all: true
+    webapp-security:
+      enabled: true
+    checker-config:
+      AUDIT.SPECULATIVE_EXECUTION_DATA_LEAK :
+        enabled: true
+      COM.ADDROF_LEAK :
+        enabled: true
+      COM.BSTR.ALLOC :
+        enabled: true
+      COM.BSTR.BAD_COMPARE :
+        enabled: true
+      COM.BSTR.NE_NON_BSTR :
+        enabled: true
+      DC.STRING_BUFFER :
+        enabled: true
+      ENUM_AS_BOOLEAN :
+        enabled: true
+      EXPOSED_NON_CONST_STATIC :
+        enabled: true
+      FLOATING_POINT_EQUALITY :
+        enabled: true
+      HARDCODED_CREDENTIALS :
+        enabled: true
+      HFA :
+        enabled: true
+      INEFFECTIVE_MOVE :
+        enabled: true
+      PARSE_ERROR :
+        enabled: true
+      OVERLY_BROAD_EXCEPTION :
+        enabled: true
+      ODR_VIOLATION :
+        enabled: true
+      REVERSE_OVERRUN :
+        enabled: true
+      RISKY_CRYPTO :
+        enabled: true
+      STACK_USE :
+        enabled: true
+      UNENCRYPTED_SENSITIVE_DATA :
+        enabled: true
+      VCALL_IN_CTOR_DTOR :
+        enabled: true
+      WEAK_GUARD :
+        enabled: true
+      WEAK_PASSWORD_HASH :
+        enabled: true
+      RISKY_CRYPTO :
+        enabled: true
+      REVERSE_OVERRUN :
+        enabled: true
+      INTEGER_OVERFLOW:
+        enabled: true
+        options:
+          enable_all_overflow_ops: true
+  trust:
+    all: false
+
+commit:
+  connect:
+    stream: commons-exec
+    url: http://k8s-cnc-ingressc-61c9622481-902802279.eu-west-1.elb.amazonaws.com
